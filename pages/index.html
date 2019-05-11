@@ -5,47 +5,70 @@
     <meta name="viewport" content="width=device-width, height=device-height" />
     <title>Title</title>
     <link rel="stylesheet" href="./css/CoveoFullSearch.css" />
+    <link rel="stylesheet" href="./css/coveoextension.css" />
     <script class="coveo-script" src="js/CoveoJsSearch.Lazy.js"></script>
+    <script src="js/coveo.extension.js"></script>
     <script src="js/templates/templates.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        Coveo.SearchEndpoint.configureCloudEndpoint('pokemon-scrape', 'xx9b5a3923-7242-4eb4-b774-63088e32da93');
+        Coveo.SearchEndpoint.configureCloudEndpoint('bulbusaur', 'xx9b5a3923-7242-4eb4-b774-63088e32da93');
         Coveo.init(document.body);
       });
     </script>
   </head>
 
   <body id="search" class="CoveoSearchInterface" data-enable-history="true">
+    <div class="CoveoFolding"></div>
+    <div class="CoveoAnalytics"></div>
     <div class="coveo-tab-section">
       <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
     </div>
     <div class="coveo-search-section">
       <div class="CoveoSettings"></div>
       <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+      <div class="CoveoFieldSuggestions" data-field="@pokemonname"></div>
     </div>
     <div class="coveo-main-section">
       <div class="coveo-facet-column">
+        <div class="CoveoFacet" data-title="Pokemon Type" data-field="@pokemontype" data-number-of-values="13"></div>
+        <div class="CoveoFacet" data-title="Pokemon Generation" data-field="@pokemongen" data-number-of-values="7"></div>
+        <div
+          class="CoveoFacet"
+          data-title="Pokemon Number"
+          data-field="@pokemonnumber"
+          data-number-of-values="4"
+          data-computed-field="@pokemonimage"
+        ></div>
+        <div
+          class="CoveoFacetSlider"
+          data-title="Pokemon no"
+          data-field="@pokemonno"
+          data-id="Pokemon no"
+          data-steps="800"
+          data-range-slider="true"
+        ></div>
+        <div class="CoveoFacet" data-title="Pokemon Name" data-field="@pokemonname" data-number-of-values="3"></div>
+        <div class="CoveoFacet" data-title="Pokemon Description" data-field="@pokemondescription" data-number-of-values="2"></div>
         <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
         <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
         <div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
-        <div class="CoveoTimespanFacet" data-tab="All"></div>
       </div>
       <div class="coveo-results-column">
         <div class="CoveoShareQuery"></div>
-        <div class="CoveoExportToExcel"></div>
         <div class="CoveoPreferencesPanel">
           <div class="CoveoResultsPreferences"></div>
           <div class="CoveoResultsFiltersPreferences"></div>
         </div>
+        <div class="CoveoTriggers"></div>
         <div class="CoveoBreadcrumb"></div>
         <div class="CoveoDidYouMean"></div>
         <div class="coveo-results-header">
           <div class="coveo-summary-section">
-            <span class="CoveoQuerySummary"></span>
+            <span class="CoveoQuerySummary"><div class="coveo-show-if-no-results"></div></span>
             <span class="CoveoQueryDuration"></span>
           </div>
           <div class="coveo-result-layout-section">
-            <span class="CoveoResultLayoutSelector"></span>
+            <span class="CoveoResultLayout"></span>
           </div>
           <div class="coveo-sort-section">
             <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
@@ -53,10 +76,54 @@
           </div>
         </div>
         <div class="CoveoHiddenQuery"></div>
-
-        <div class="CoveoErrorReport"></div>
-        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true"></div>
-        <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true"></div>
+        <div class="CoveoErrorReport" data-pop-up="false"></div>
+        <div
+          class="CoveoResultList"
+          data-layout="list"
+          data-wait-animation="fade"
+          data-auto-select-fields-to-include="true"
+          data-infinite-scroll-page-size=""
+          data-fields-to-include="@pokemonimage"
+        >
+          <script id="Default" class="result-template" type="text/html" data-layout="list">
+            <div class="coveo-result-frame">
+                  <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+                <span class="CoveoFieldValue" data-field="@pokemonimage" data-html-value="true"></span>
+                <div class="CoveoQuickview"></div>
+                </div>
+                  <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+                    <div class="coveo-result-row" style="margin-top:0;">
+                      <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                        <a class="CoveoResultLink"></a>
+                      </div>
+                      <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                        <div class="coveo-result-row">
+                          <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="coveo-result-row" style="margin-top:10px;">
+                      <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@pokemondescription" data-facet="Pokemon Description"></span>
+                </div>
+                    </div>
+                    <div class="coveo-result-row" style="margin-top:10px;">
+                      <div class="coveo-result-cell">
+                        <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+                        <span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
+                        <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+                        <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
+                      </div>
+                    </div>
+                    <div class="coveo-result-row" style="margin-top:10px;">
+                      <div class="coveo-result-cell">
+                        <div class="CoveoPrintableUri"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </script>
+        </div>
         <div class="CoveoPager"></div>
         <div class="CoveoLogo"></div>
         <div class="CoveoResultsPerPage"></div>
