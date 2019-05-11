@@ -8,7 +8,7 @@ The app is deployed on Heroku. Access it by clicking the following path : https:
 
 The deliverables that Coveo asked for that were completed will be in **bold** :
 
-Essential
+# Essential
 ● **Index (A.K.A Crawl) pokemondb.net using your Cloud Platform Organization
 either with a Web or Push source
 ○ Use https://pokemondb.net/pokedex/national as your starting point.
@@ -29,13 +29,13 @@ facet**
 ● Add a ranking expression to boost Ghost Pokemon with a modifier of 100,
 but only if they are a first generation Pokemon.**
 
-Intermediary - (Metadata : Pokemon Name, Number, Weight, Description)
+# Intermediary - (Metadata : Pokemon Name, Number, Weight, Description)
 ● **Create a facet slider to filter results by Pokemon Number.**
 ● Create a facet slider to filter results by Pokemon Weight.
 ● **Add Pokemon name suggestions to the search box.
 ● Change the result excerpt to a small description of each Pokemon.**
 
-Bonus (Advanced)
+# Bonus (Advanced)
 ● **Extract other special forms (Mega, Alola, etc.) from Pokemon which have
 them and display them in your result template under the regular Pokemon.
 (See examples of special forms below)
