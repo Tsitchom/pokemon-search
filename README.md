@@ -4,7 +4,7 @@
 
 This Github contains a demo variant of the Coveo Search UI product that scrapes through https://pokemondb.net/ to render a searchable UI that enables the user to search for Pokemon with different search tools.
 
-The app is deployed on Heroku. Access it by clicking the following path : https://pokemondb-search-ui.herokuapp.com/#t=All&sort=relevancy
+The app is deployed on Heroku. Access it by clicking the following url : https://pokemondb-search-ui.herokuapp.com/#t=All&sort=relevancy
 
 The deliverables that Coveo asked for that were completed will be in **bold** :
 
