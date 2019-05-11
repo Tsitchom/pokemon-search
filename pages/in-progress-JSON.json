@@ -1,0 +1,83 @@
+[
+  {
+    "for": {
+      "urls": [".*"]
+    },
+    "exclude": [
+      {
+        "type": "CSS",
+        "path": "body > header"
+      },
+      {
+        "type": "CSS",
+        "path": "body > nav"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > ul"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div.panel.panel-intro"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(4)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(10)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(13)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(16)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(19)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(22)"
+      },
+      {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(25)"
+      }
+    ],
+    "metadata": {
+      "gen-1-infocards": {
+        "type": "CSS",
+        "path": "body > main > div:nth-child(7)"
+      },
+      "pokemontype": {
+        "type": "XPATH",
+        "path": "/html/body/main/div[1]/div[1]/p/a/text()"
+      },
+      "pokemongen": {
+        "type": "XPATH",
+        "path": "/html/body/main/div[1]/div[1]/p/abbr/text()"
+      },
+      "pokemonno": {
+        "type": "XPATH",
+        "path": "number(//*/div[1]/div[2]/table/tbody/tr[1]/td/strong/text())"
+      },
+      "pokemonimage": {
+        "type": "XPATH",
+        "path": "//*/div[1]/div[1]/p[1]/a/img"
+      },
+      "pokemonname": {
+        "type": "XPATH",
+        "path": "/html/body/main/h1/text()"
+      },
+      "pokemondescription": {
+        "type": "XPATH",
+        "path": "string(/html/body/main/div[1]/div[1]/p)"
+      }
+    }
+  }
+]
